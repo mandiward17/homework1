@@ -1,0 +1,28 @@
+---
+title: "homework1"
+author: "Mandi Ward, Zach Farley & Esme Castro"
+date: "2/8/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("tidytuesdayR")
+library(tidyverse)
+```
+
+
+## Reading in the data
+```{r}
+transit_cost <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-01-05/transit_cost.csv')
+
+transit_cost <- tidytuesdayR::tt_load(2021, week = 2)
+```
+
+## Question 1 reproduce plot using transit costs data
+```{r}
+install.packages("countrycode")
+country_codes <- countrycode::codelist %>% 
+  select(country_name = country.name.en, country = ecb)
+```
+
